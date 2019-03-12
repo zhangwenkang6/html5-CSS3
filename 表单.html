@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #a{
+            width: 500px;
+            height: 110px;
+        }
+        #b{
+            width: 500px;
+            height: 100px;
+        }
+        #red{
+            color: red;
+        }
+        #a span.required{
+            color: red;
+        }
+        .h1,form{
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1">毕业生信息</h1>
+    <form action="" class="form">
+        <fieldset id="a">
+            <legend id='red'>
+                学生信息
+            </legend>
+            姓 名<input type="text"  name="name" placeholder="请输入姓名" required>
+            <span class="required">*</span>
+            <br>
+            学 号<input type="number"  placeholder="请输入学号" name="number" required> 
+            <span class="required">*</span>
+            <br>
+            手 机<input type="tel"  placeholder="请输入手机号" name="phone" required>
+            <span class="required">*</span>
+            <br>
+            邮 箱<input  type="email"  name="email" placeholder="请输入邮箱" required> 
+            <span class="required">*</span>
+        </fieldset>
+        <br>
+        <fieldset id="b">
+            <legend id='red'>
+                录取情况
+            </legend>
+            录取学校<input type="text"  name="school">
+            <br>
+            录取成绩<input type="text"  name="per">
+            <br>
+            录取时间<input type="date" name="date">
+        </fieldset>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
