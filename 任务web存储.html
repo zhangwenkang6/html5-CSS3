@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #text{
+            width: 200px;
+            height: 35px;
+        }
+        #seach{
+            width: 150px;
+            height: 38px;
+        }
+        #big{
+            width: 370px;
+            float: left;
+            height: 500px;
+        }
+        #clear{
+            float: left;
+            width: 22px;
+            height: 22px;
+            background-color:  #e0e0e0;
+            color: #fff;
+            border: none;
+        }
+        #p{
+            margin-top: 0px;
+        }
+        .small{
+            background-color: #e0e0e0;
+            float: left;
+            border: 1px solid #cccccc;
+            margin-top: 0;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text" autofocus placeholder='请输入想查找的商品'>
+    <button id="seach">搜索</button>
+    <p id="p">最近搜索</p>
+    <div id=big>
+    </div>
+    <button id="clear">X</button>
+    <script>
+        var seach=document.getElementById('seach');
+        var text = document.getElementById('text');
+        var big = document.getElementById('big');
+        var clear = document.getElementById('clear');
+        seach.onclick=function(){
+            for(var i=0; i<=localStorage.length; i++){
+                var key = localStorage.key(i);
+                var time = new Date().getTime();
+                if(i!=(localStorage.length)){   
+                    if(text.value == localStorage.getItem(key))
+                        break;
+                    else
+                        continue;
+                }
+                else{
+                    if(text.value != ''){
+                        localStorage.setItem(time, text.value);
+                        var div = document.createElement('div');
+                        var p = document.createElement('p');
+                        p.innerHTML += text.value;
+                        big.appendChild(div);
+                        div.appendChild(p);
+                        p.className="small";
+                        text.value = "" ;
+                        break;
+                    }
+                }         
+			}
+        }
+        clear.onclick=function(){
+            localStorage.clear();
+            big.innerHTML='';
+        }
+        window.onload=function(){
+            var str=['《HTML+CSS3从入门到精通》','电脑','华为手机','面包'];
+            for(var x=1;x<5;x++){
+                localStorage.setItem(x,str[x-1]);
+                var div = document.createElement('div');
+                var p = document.createElement('p');
+                p.innerHTML += str[x-1];
+                big.appendChild(div);
+                div.appendChild(p);
+                p.className="small";
+            }
+        }
+    </script>
+</body>
+</html>
