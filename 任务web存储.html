@@ -56,8 +56,10 @@
                 var key = localStorage.key(i);
                 var time = new Date().getTime();
                 if(i!=(localStorage.length)){   
-                    if(text.value == localStorage.getItem(key))
+                    if(text.value == localStorage.getItem(key)){
+                        text.value = "" ;
                         break;
+                    }    
                     else
                         continue;
                 }
