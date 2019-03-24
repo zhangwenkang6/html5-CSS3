@@ -85,11 +85,14 @@
         }
         window.onload=function(){
             var str=['《HTML+CSS3从入门到精通》','电脑','华为手机','面包'];
-            for(var x=1;x<5;x++){
-                localStorage.setItem(x,str[x-1]);
+            for(y=0;y<=3;y++){
+                localStorage.setItem(y,str[y]);
+            }
+            for(var x=0; x<localStorage.length; x++){
+                var key = localStorage.key(x);
                 var a = document.createElement('a');
                 var p = document.createElement('p');
-                p.innerHTML += str[x-1];
+                p.innerHTML += localStorage.getItem(key);
                 big.appendChild(a);
                 a.appendChild(p);
                 p.className="small";
