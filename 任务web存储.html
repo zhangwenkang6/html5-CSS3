@@ -36,6 +36,8 @@
             border: 1px solid #cccccc;
             margin-top: 0;
             margin-right: 10px;
+            margin-bottom: 14px;
+            color: #000;
         }
     </style>
 </head>
@@ -57,7 +59,6 @@
                 var time = new Date().getTime();
                 if(i!=(localStorage.length)){   
                     if(text.value == localStorage.getItem(key)){
-                        text.value = "" ;
                         break;
                     }    
                     else
@@ -66,13 +67,13 @@
                 else{
                     if(text.value != ''){
                         localStorage.setItem(time, text.value);
-                        var div = document.createElement('div');
+                        var a = document.createElement('a');
                         var p = document.createElement('p');
                         p.innerHTML += text.value;
-                        big.appendChild(div);
-                        div.appendChild(p);
+                        big.appendChild(a);
+                        a.appendChild(p);
                         p.className="small";
-                        text.value = "" ;
+                        a.href='#';  //a标签的href属性应该是点击后跳转到之前搜索记录的链接，这里先用#代替
                         break;
                     }
                 }         
@@ -86,12 +87,13 @@
             var str=['《HTML+CSS3从入门到精通》','电脑','华为手机','面包'];
             for(var x=1;x<5;x++){
                 localStorage.setItem(x,str[x-1]);
-                var div = document.createElement('div');
+                var a = document.createElement('a');
                 var p = document.createElement('p');
                 p.innerHTML += str[x-1];
-                big.appendChild(div);
-                div.appendChild(p);
+                big.appendChild(a);
+                a.appendChild(p);
                 p.className="small";
+                a.href='#';
             }
         }
     </script>
