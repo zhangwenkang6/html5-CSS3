@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas{
+            left: 400px;
+            top: 200px;
+            position: absolute;
+            display: block;
+        }      
+        #background{
+            width: 300px;
+            height: 300px;
+            left: 400px;
+            top: 200px;
+            position: absolute;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button id='change'>随机更换彩票</button>
+    <div id='background'></div>
+    <canvas width="300px" height="300px" id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var background= document.getElementById('background');
+    var context = canvas.getContext("2d");
+    var aaaa=function (){
+        var picture=new Array('a.gif','b.gif','c.jpg','d.gif');
+        var y=Math.random(),x;
+        if(0<=y && y<0.5){ x=2;};  //谢谢参与的概率为50%
+        if(0.5<=y && y<0.8){ x=1;};    //二等奖的概率为30%
+        if(0.8<=y && y<0.95){ x=0;};    //一等奖的概率为15%
+        if(0.95<=y && y<=1){ x=3;};     //特等奖的概率为5%
+        background.style.backgroundImage="url("+picture[x]+")"; 
+        context.beginPath();
+        context.fillStyle = "gray";
+        context.fillRect(0, 0,300,300);//源图像
+        context.fill();
+        context.closePath();
+    }
+    window.onload = aaaa();
+    var change = document.getElementById('change');
+
+    change.onclick=function(){
+        var picture=new Array('a.gif','b.gif','c.jpg','d.gif');
+        var y=Math.random(),x;
+        if(0<=y && y<0.5){ x=2;};  //谢谢参与的概率为50%
+        if(0.5<=y && y<0.8){ x=1;};    //二等奖的概率为30%
+        if(0.8<=y && y<0.95){ x=0;};    //一等奖的概率为15%
+        if(0.95<=y && y<=1){ x=3;};     //特等奖的概率为5%
+        console.log(y,x);
+        background.style.backgroundImage="url("+picture[x]+")"; 
+
+        canvas.height = canvas.height;
+        context.beginPath();
+        context.fillStyle = "gray";
+        context.fillRect(0, 0,300,300);//源图像
+        context.fill();
+        context.closePath();
+    }
+
+    canvas.onmousedown = function (ev) {  
+        var ev=ev||window.event;
+        context.beginPath();
+        context.globalCompositeOperation = 'destination-out';
+        context.fillStyle = 'white';
+        context.arc(ev.clientX-400,ev.clientY-200,30, 0, 2 * Math.PI);
+        context.fill();
+        context.closePath();
+        var image = context.getImageData(0,0,300,300);
+        var a,b=0,c;
+        for(a=3;a<=image.data.length;a+=4){
+            if(image.data[a] != 255){
+                b++;
+                if(b ==(300*300*0.85)){
+                    for(c=3;c<=image.data.length;c+=4){
+                        image.data[c] = 0;
+                    }
+                    context.putImageData(image, 0, 0);
+                    //context.clearRect(0,0,300,300); 清空矩形也可以
+                }
+            }
+        }
+        canvas.onmousemove = function (ev) {  
+            var ev=ev||window.event;
+            context.beginPath();
+            context.globalCompositeOperation = 'destination-out';
+            context.fillStyle = 'white';
+            context.arc(ev.clientX-400,ev.clientY-200,30, 0, 2 * Math.PI);
+            context.fill();
+            context.closePath();
+            var image = context.getImageData(0,0,300,300);
+            var a,b=0,c;
+            for(a=3;a<=image.data.length;a+=4){
+                if(image.data[a] != 255){
+                    b++;
+                    if(b ==(300*300*0.85)){
+                        for(c=3;c<=image.data.length;c+=4){
+                            image.data[c] = 0;
+                        }
+                        context.putImageData(image, 0, 0);
+                        //context.clearRect(0,0,300,300); 清空矩形也可以
+                    }
+                }
+            }
+        }
+        canvas.onmouseup=function(ev){
+            canvas.onmousemove=null;   
+        }
+    }
+
+</script>
+</html>
