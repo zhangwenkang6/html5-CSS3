@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .out{
+            width: 400px;
+            height: 480px;
+            border: solid 2px rgb(218, 216, 216);
+            box-shadow: 2px  2px rgb(218,216,216);
+        }
+        .picture{
+            width: 400px;
+            height: 300px;
+            background-size: 400px 300px;
+            overflow:hidden;
+        }
+        .change{
+            width: 400px;
+            height: 300px;
+            transition-property: transform;
+            transition-duration:0.5s; 
+            transition-timing-function: ease-in-out;
+        }
+        .orange{
+            color: orange;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+        #circle{
+			width: 50px;
+			height: 50px;
+			background: rgb(255, 123, 0);
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            position:absolute;
+            left: 330px;
+            top: 30px;
+        }
+        #circle p{
+            float: left;
+            margin-left: 8px;
+            margin-top: 8px;
+        }
+        .text{
+            background:white;
+            width: 400px;
+            height: 100px;
+            transition-property: transform;
+            transition-duration:0.5s; 
+            transition-timing-function: ease-in-out;
+        }
+        .grey{
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            left: 10px;
+            top: 10px;
+            opacity: 0;
+            transition-duration:0.5s; 
+            transition-timing-function: ease-in-out;
+        }
+        .out:hover .grey{
+            height: 200px;
+            background-color: rgb(133, 131, 131);
+            opacity: 0.5;
+        }
+        .out:hover .change{
+            transform: scale(1.2,1.2);
+        } 
+        .out:hover .text{
+            transform: translateY(-100px);
+        }
+        .conceal{
+            visibility: hidden;
+            margin-left: 20px;
+        }
+        .out:hover .conceal{
+            animation-name: show0;
+            animation-duration: 0.5s;
+            animation-fill-mode:forwards;
+        }
+        @keyframes show0{
+            0%{
+		        visibility:hidden;
+            }
+            40%{
+		        visibility:hidden;
+            }
+            /* 70%{
+		        visibility:visible;
+            } */
+            100%{
+                visibility: visible;
+            }
+        }
+        .big{
+            margin-top: 0px;
+            padding-top: 19px;
+            margin-left: 20px;
+        }
+        .corner{
+            position: absolute;
+            height: 30px;
+            width: 60px;
+            color: white;
+            top: 280px;
+            background: rgb(255, 123, 0);
+            transition-property: transform;
+            transition-duration:0.5s; 
+            transition-timing-function: ease-in-out;
+        }
+        .out:hover .corner{
+            transform: translateY(-100px);
+        }
+        .corner p{
+            float: left;
+            margin-left: 15px;
+            margin-top: 3px;
+        }
+        .item-link {
+            -webkit-transition: all 160ms;
+            transition: all 160ms;
+            font-weight: normal;
+        }
+        .buttom{
+            position: relative;
+            left: 20px;
+            bottom: -35px;
+            color:rgb(218, 216, 216);
+        }
+    </style>
+</head>
+<body>
+    <div  class="out">
+        <div>
+            <div class="picture">
+                <img src="zhanqiao.jpg" alt="" class="change">
+            </div>
+            <div class="text">
+                <h2 class="big">青岛栈桥</h2>
+                <p class="orange">国家AAAA级旅游景区</p>
+                <p class="conceal">青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区，
+                    也是首批国家AAAA级旅游景区。青岛栈桥位于游人如织的青岛中山路南端，
+                    桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，
+                    由此乘船可看海上青岛。</p>
+            </div>
+            <p class="buttom">10分钟前             123评论 </p>
+            <div id="circle"><p>15<br/>五月</p></div>
+        </div>
+        <div class="grey"></div>
+        <div id="circle"><p>15<br/>五月</p></div>
+        <div class="corner"><p>照片</p></div>
+    </div>
+</body>
+</html>
