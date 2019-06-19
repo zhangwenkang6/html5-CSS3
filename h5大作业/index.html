@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+      #part4,#part3,#part1,#part2{
+        width: 100%;
+        height: 600px;
+      }
+    </style>
+</head>
+<body data-spy="scroll" >
+
+	<div class="container" >
+	      <nav  class="navbar navbar-default navbar-fixed-top"   id="navbar-example">
+          <div class="border">
+            <div class="account">
+              <!-- <p>400-868-8082     请登录  |  注册</p> -->
+              <a href="#">400-868-8082       </a>
+              <a href="#">请登录    </a>
+              <div></div>
+              <a href="#">注册</a>
+            </div>       
+            <img src="./img/tell.png" alt="">
+          </div>
+	        <div class="navbar-header">
+	          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-1">
+              <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+            </button>
+            <button class="navbar-toggle quick" type="button" data-toggle="collapse" data-target="#">
+              快速定制
+            </button>
+	          <img src="./img/logo.png" alt="" class="logo">
+	        </div>
+	        <div class="collapse navbar-collapse " id="bs-1">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#part1">首页</a></li>
+              <li><a href="#part2">热门路线</a></li>
+              <li><a href="#part3">签证推荐</a></li>
+              <li><a href="#part4">使命愿景</a></li>
+	          </ul>
+	        </div>
+        </nav>
+        <div class="part">
+          <div id="part1">
+              <div id="generic" class="carousel slide" data-ride="carousel">
+                  <!-- 轮播（Carousel）指示标 -->
+                  <!-- <ol class="carousel-indicators">
+                    <li data-target="#generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#generic" data-slide-to="1"></li>
+                    <li data-target="#generic" data-slide-to="2"></li>
+                  </ol> -->
+                  <div class="seek">
+                      <button class="destination">
+                        <img src="./img/position.png" alt="">
+                        <p>目的地</p>
+                      </button>
+                      <input type="text" placeholder=" | 日本 美国 英国 地中海">
+                      <button class="search">
+                        <img src="./img/search.png" alt="">
+                      </button>
+                  </div>
+                   <!-- 轮播（Carousel）项目 -->
+                  <div class="carousel-inner" >
+                    <div class="item active">
+                      <img alt="First slide" src="./img/banner.jpg" >
+                      <div class="carousel-caption">
+                          <div class="write1">
+                              <h1>悠游古欧洲  遍览德法意瑞</h1>
+                              <div></div>
+                              <p>巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                              <p>少女峰、大运河游船、金色列车、西庸城堡</p>
+                              <div></div>
+                            </div>
+                            <div class="write2">
+                              <h3>悠游古欧洲  遍览德法意瑞</h3>
+                              <p>全程升级热早+1晚5星酒店</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="item">
+                      <img alt="Second slide" src="./img/banner.jpg" >
+                      <div class="carousel-caption">
+                          <div class="write1">
+                              <h1>悠游古欧洲  遍览德法意瑞</h1>
+                              <div></div>
+                              <p>巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                              <p>少女峰、大运河游船、金色列车、西庸城堡</p>
+                              <div></div>
+                            </div>
+                            <div class="write2">
+                              <h3>悠游古欧洲  遍览德法意瑞</h3>
+                              <p>全程升级热早+1晚5星酒店</p>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img alt="Third slide" src="./img/banner.jpg"  >
+                      <div class="carousel-caption">
+                          <div class="write1">
+                              <h1>悠游古欧洲  遍览德法意瑞</h1>
+                              <div></div>
+                              <p>巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                              <p>少女峰、大运河游船、金色列车、西庸城堡</p>
+                              <div></div>
+                            </div>
+                            <div class="write2">
+                              <h3>悠游古欧洲  遍览德法意瑞</h3>
+                              <p>全程升级热早+1晚5星酒店</p>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 轮播（Carousel）导航 -->
+                  <a class="left carousel-control" href="#generic" data-slide="prev">
+                    <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
+                    <img src="./img/left.png" alt="" class="left1">
+                  </a>
+                  <a class="right carousel-control" href="#generic" data-slide="next">
+                    <!-- <span class="glyphicon glyphicon-chevron-right"></span> -->
+                    <img src="./img/right.png" alt="" class="right1">
+                  </a>
+                </div>
+          </div>
+          <div id="part2">s</div>
+          <div id="part3">sss</div>
+          <div id="part4">ssss</div>
+        </div>
+      </div >
+</body>
+
+</html>
